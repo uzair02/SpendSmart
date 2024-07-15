@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Create | Edit";
+}
+
+@model SpendSmart.Models.Expense
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Create or Edit an Expense</h1>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg p-4">
+                <form asp-action="SubmitCreateEditExpense" asp-controller="Home" method="post">
+                    <input hidden class="form-control" type="number" name="id" asp-for="Id" />
+
+                    <div class="form-group">
+                        <label for="value" class="mt-2">Value:</label>
+                        <input class="form-control" type="number" id="value" name="value" placeholder="0" asp-for="Value" step="1" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="mt-2">Description:</label>
+                        <input class="form-control" type="text" id="description" name="description" placeholder="Add a description" asp-for="Description" />
+                    </div>
+
+                    <button class="btn btn-outline-primary btn-block mt-4" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card {
+            border-radius: 1rem;
+            background-color: #f8f9fa;
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+        }
+
+        .btn-outline-primary {
+            border-radius: 0.5rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center my-5">
+    <h1 class="display-4 mb-4">Welcome to SpendSmart</h1>
+    <div class="card mx-auto shadow-lg" style="max-width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title">Manage Your Expenses</h5>
+            <p class="card-text">Keep track of your expenses with ease. Use the buttons below to get started.</p>
+            <br />
+            <a asp-controller="Home" asp-action="Expenses" class="btn btn-outline-primary btn-block mb-2">Overview</a>
+            <a asp-controller="Home" asp-action="CreateEditExpense" class="btn btn-outline-secondary btn-block">Add New Expense</a>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card-body {
+            padding: 2rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+    </style>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
